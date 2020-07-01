@@ -106,4 +106,4 @@ If you wand to regenerate those results, two steps are needed:
 **Notice:** Please note that each individual training experiments needs a long time to train (between 20 and 35 hours with one GPU), we therefore recommand to run them if possible on a cluster and in parallel. For this purpose, each python script `<script_name>.py` is accompanied by a `run_<script_name>.slurm` to run the code on a cluster using the [SLURM](https://slurm.schedmd.com/overview.html) job manager.
 
 ## Acknowledgement
-The *autodisc* package used in our code builds upon flowersteam's [autodisc](https://github.com/flowersteam/automated_discovery_of_lenia_patterns) package that was intially developped by [Chris Reinke](https://www.scirei.net/). 
+The *autodisc* package used in our code builds upon flowersteam's [autodisc](https://github.com/flowersteam/automated_discovery_of_lenia_patterns) package developped by [Chris Reinke](https://www.scirei.net/). 
