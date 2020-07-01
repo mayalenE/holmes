@@ -1,0 +1,3 @@
+from autodisc.representations.static.pytorchnnrepresentation.models.encoders import EncoderBurgess
+from autodisc.representations.static.pytorchnnrepresentation.models.decoders import DecoderBurgess
+

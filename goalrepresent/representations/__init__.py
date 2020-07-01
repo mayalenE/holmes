@@ -1,0 +1,1 @@
+from goalrepresent.representations.single import SingleModelRepresentation

@@ -1,0 +1,1 @@
+import autodisc.classifier.static

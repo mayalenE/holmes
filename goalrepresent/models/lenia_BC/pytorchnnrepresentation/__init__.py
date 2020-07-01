@@ -1,0 +1,1 @@
+from .pytorchnnarchitectures import BetaVAE
