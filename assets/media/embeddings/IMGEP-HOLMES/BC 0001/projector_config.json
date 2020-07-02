@@ -1,0 +1,20 @@
+{
+  "embeddings": [
+    {
+      "tensorName": "IMGEP-HOLMES-BC 0001",
+      "tensorShape": [
+        573,
+        16
+      ],
+      "tensorPath": "http://holmes.890m.com/assets/media/embeddings/IMGEP-HOLMES/BC 0001/tensors.tsv",
+      "metadataPath": "http://holmes.890m.com/assets/media/embeddings/IMGEP-HOLMES/BC 0001/metadata.tsv",
+      "sprite": {
+        "imagePath": "http://holmes.890m.com/assets/media/embeddings/IMGEP-HOLMES/BC 0001/sprite.png",
+        "singleImageDim": [
+          64,
+          64
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "embeddings": [
+    {
+      "tensorName": "IMGEP-VAE-BC 0",
+      "tensorShape": [
+        5000,
+        16
+      ],
+      "tensorPath": "http://holmes.890m.com/assets/media/embeddings/IMGEP-VAE/BC 0/tensors.tsv",
+      "metadataPath": "http://holmes.890m.com/assets/media/embeddings/IMGEP-VAE/BC 0/metadata.tsv",
+      "sprite": {
+        "imagePath": "http://holmes.890m.com/assets/media/embeddings/IMGEP-VAE/BC 0/sprite.png",
+        "singleImageDim": [
+          64,
+          64
+        ]
+      }
+    }
+  ]
+}

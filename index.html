@@ -1,1 +1,404 @@
-Website in construction!
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Hierarchically-Organized Latent Modules for Exploratory Search in Morphogenetic Systems</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Hierarchically-Organized Latent Modules for Exploratory Search in Morphogenetic Systems" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Hierarchically-Organized Latent Modules for Exploratory Search in Morphogenetic Systems" />
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://localhost:4000/","name":"Hierarchically-Organized Latent Modules for Exploratory Search in Morphogenetic Systems","headline":"Hierarchically-Organized Latent Modules for Exploratory Search in Morphogenetic Systems","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Experiment database script -->
+    <script src="/assets/js/experiments_database.js"></script>
+
+  </head>
+  <body>
+    <div class="wrapper">
+	<hr class="mainhr">
+	<h1>Hierarchically-Organized Latent Modules for <br> Exploratory Search in Morphogenetic Systems</h1>
+
+      <section>
+
+      <p style="font-size: 1.3em; text-align: center;"><a href="https://mayalenetcheverry.com/">Mayalen Etcheverry</a>, <a href="http://clement-moulin-frier.github.io/">Clément Moulin-Frier</a>, <a href="http://www.pyoudeyer.com/">Pierre-Yves Oudeyer</a></p>
+
+<p style="font-size: 1.3em; text-align: center;">June 2020</p>
+
+<p style="color:gray; font-size: 150%; text-align: center;"><a href="">[Paper]</a> <a href="https://github.com/mayalenE/holmes/">[Code]</a></p>
+
+<hr class="mainhr" />
+
+<p><br /></p>
+<h3 id="a-morphogenetic-system-lenia">A Morphogenetic System: Lenia</h3>
+<p>We use <a href="https://arxiv.org/abs/1812.05433">Lenia</a> cellular automaton, a continuous generalization to Conway’s <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a>, as environment of study.<br />
+Lenia can generate a wide range of complex behaviors and life-like structures, as testifies the collection of “species” that have been manually identified and classified by Lenia’s crator <a href="https://chakazul.github.io/">Bert Chan</a>.</p>
+<div style="width: 1200px; display: flex; justify-content: space-between; align-items: center;">
+<img src="assets/media/image/gif/lenia_explanation.gif" style="width: 560px; height: 315px;" />
+<iframe src="https://www.youtube.com/embed/iE46jKYcI4Y?autoplay=1&amp;loop=1&amp;autopause=0&amp;playlist=iE46jKYcI4Y&amp;mute=1&amp;enablejsapi=1&amp;end=140&amp;controls=0" frameborder="0" allowfullscreen="" style="width: 560px; height: 315px;"></iframe>
+</div>
+<div style="width: 1200px; display: flex; justify-content: space-between; align-items: center;">
+<span align="center" style="font-weight: bold;"> Lenia's system rollout A<sup>t=1</sup> &#8594; ... &#8594; A<sup>t=T</sup> </span>
+<span align="center" style="font-weight: bold;"> Examples of "lifeforms" identified by Lenia's creator</span>
+</div>
+
+<p><br />
+A rollout in Lenia is defined by the <em>initial state</em> (A<sup>t=1</sup>, seed of the system) as well as its <em>local update rule</em> that is iteratively applied to evolve the state of the system through time (A<sup>t=1</sup> → … → A<sup>t=T</sup>).</p>
+
+<p>In this paper, an artificial agent is given the task to explore Lenia with a budget of N=5000 runs, where, for each run the agent must select the set of initial parameters θ ∈ Θ that will determine the system rollout.
+<strong>We aim to build an artificial “discovery assistant” that would automatically assist a human end-user in its exploration of a complex dynamical system like Lenia.</strong></p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="proposed-approach-imgep-holmes">Proposed Approach: IMGEP-HOLMES</h3>
+<p>In IMGEP-HOLMES, a hierarchy of embedding networks is actively constructed by the exploring agent 
+to represent the different niches of patterns discovered during the exploration loop. Below, we provide a visualisation tool to 
+browse through the discovered niches of patterns within the tree-structured representation. We can observe that IMGEP-HOLMES unsupervisedly learns to separate
+visually distinct categories of patterns into the different behavioral characterization spaces, allowing to discover diverse patterns within each of them.</p>
+
+<div style="width: 100%; display: flex;">
+    <div style="width: 600px; ">
+        <object id="svg" data="assets/media/embeddings/holmes_partitionning_arranged.svg" type="image/svg+xml" style="width: 100%; float: left;"></object>
+        <span style="max-width: 550px; display:block; margin: 0 auto;"> <i class="fa fa-hand-pointer-o"></i>
+            Click on a node to visualize the corresponding BC space and discovered patterns within that node on the right panel.
+            </span>
+    </div>
+    <div style="width: 600px; float: left">
+        <h3 id="gs_title" title="BC 0" align="center" style="margin-bottom:-10px">BC 0:</h3>
+        <div style="width: 100%; overflow: hidden; margin-top: 0px; margin-left: 0px; margin-right: 0px; margin-bottom: 0px;">
+            <iframe id="gs_frame" name="visualisation" src="http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 0/projector_config.json" scrolling="no" class="goal-space" style="height:730px; width: 1240px; margin-top: -108px; margin-left: -340px; margin-bottom: -5px; margin-right: -300px">
+            </iframe>
+        </div>
+        <span style="max-width: 550px; display:block; margin: 0 auto;"> <i class="fa fa-hand-pointer-o"></i>
+            Patterns are visualized with 3D PCA reduction of the original 16D BC space. You can rotate (left click), pan (right click) and scroll (mouse wheel) through the patterns. </span>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(window).load(function() {
+<!--    $("#_g1229").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 0/projector_config.json");-->
+<!--    $("#_g1528").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 00/projector_config.json");-->
+<!--    $("#_g1818").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 01/projector_config.json");-->
+<!--    $("#_g2108").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 000/projector_config.json");-->
+<!--    $("#_g2317").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 001/projector_config.json");-->
+<!--    $("#_g2526").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 010/projector_config.json");-->
+<!--    $("#_g2798").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 011/projector_config.json");-->
+<!--    $("#_g3061").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 0000/projector_config.json");-->
+<!--    $("#_g3270").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 0001/projector_config.json");-->
+<!--    $("#_g3479").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 0110/projector_config.json");-->
+<!--    $("#_g3724").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 0111/projector_config.json");-->
+<!--    $("#_g3969").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 00000/projector_config.json");-->
+<!--    $("#_g4178").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 00001/projector_config.json");-->
+<!--    $("#_g4387").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 00010/projector_config.json");-->
+<!--    $("#_g4596").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 00011/projector_config.json");-->
+<!--    $("#_g4805").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 01100/projector_config.json");-->
+<!--    $("#_g5014").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 01101/projector_config.json");-->
+<!--    $("#_g5223").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 01110/projector_config.json");-->
+<!--    $("#_g5450").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 01111/projector_config.json");-->
+<!--    $("#_g5659").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 011110/projector_config.json");-->
+<!--    $("#_g5868").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 011111/projector_config.json");-->
+<!--    $("#_g6077").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 0111100/projector_config.json");-->
+<!--    $("#_g7210").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/BC 0111101/projector_config.json");-->
+});
+
+
+var dict_gs = {
+    "g1229": 'BC 0',
+    "g1528": 'BC 00',
+    "g1818": 'BC 01',
+    "g2108": 'BC 000',
+    "g2317": 'BC 001',
+    "g2526": 'BC 010',
+    "g2798": 'BC 011',
+    "g3061": 'BC 0000',
+    "g3270": 'BC 0001',
+    "g3479": 'BC 0110',
+    "g3724": 'BC 0111',
+    "g3969": 'BC 00000',
+    "g4178": 'BC 00001',
+    "g4387": 'BC 00010',
+    "g4596": 'BC 00011',
+    "g4805": 'BC 01100',
+    "g5014": 'BC 01101',
+    "g5223": 'BC 01110',
+    "g5450": 'BC 01111',
+    "g5659": 'BC 011110',
+    "g5868": 'BC 011111',
+    "g6077": 'BC 0111100',
+    "g7210": 'BC 0111101'
+}
+
+
+function showGS(r){
+<!--    $(".goal-space").hide();-->
+<!--    $("#_"+r).show();-->
+<!--    console.log(document.getElementById("svg").contentWindow.document.getElementById(r));-->
+    document.getElementById("svg").contentWindow.document.getElementsByClassName('gson')[0].classList.add('gsoff');
+    document.getElementById("svg").contentWindow.document.getElementsByClassName('gson')[0].classList.remove('gson');
+    document.getElementById("svg").contentWindow.document.getElementById(r).classList.add('gson');
+    document.getElementById("svg").contentWindow.document.getElementById(r).classList.remove('gsoff');
+    document.getElementById("gs_title").textContent=dict_gs[r]+":"
+    $("#gs_frame").attr("src", "http://projector.tensorflow.org/?config=https://mayalenE.github.io/assets/media/embeddings/IMGEP-HOLMES/"+dict_gs[r]+"/projector_config.json")
+}
+
+
+
+
+</script>
+
+<p><br />
+<i class="fa fa-arrow-right"></i> This is an example of visualisation tool that could be used for integrating a human evaluator in the loop.
+With only few “clicks”, the human can browse through the different modules and assign preferences scores in order to <em>guide</em> the exploration process.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="example-of-interesting-niche-of-patterns-autonomously-discovered-by-imgep-holmes">Example of Interesting Niche of Patterns Autonomously Discovered by IMGEP-HOLMES</h3>
+<p>Continuous cellular automata are of particular interest to better understand the <a href="https://en.wikipedia.org/wiki/Abiogenesis">chemical origin of Life</a>.
+Indeed, a major mystery in understanding life’s beginning is the possibility that complex ordered patterns (closed systems) 
+could poped to existence out of an initially disordered state, referred to as <em>primmordial soup</em>.
+In the <a href="https://arxiv.org/abs/2005.03742">extended Lenia paper</a>, many parallels are done with the artificial phenomenon observed in Lenia:</p>
+<blockquote>
+  <p>The gradual emergence of several important phenomena in Lenia is reminiscent of the origin of life.
+Cell individuality and self-replication are among the hallmarks of life on Earth, each has abiotic origins. 
+Individuality originated from lipid membranes that were formed spontaneously by hydrophobic molecules in the primordial
+soup, separate the outside world from an area where specific chemical reactions can occur, and protect such an area from
+physical attacks and chemical insults (Haldane, 1929). Self-replication possibly came from the RNA World, where RNA
+molecules self-assemble and self-replicate out from amino acid building blocks (Joyce, 1989).</p>
+</blockquote>
+
+<blockquote>
+  <p>A site in Lenia can be thought of as a “molecule” (or a “concentration of molecules” in continuous case). 
+Consequently a kernel would be a type of molecular force or chemical reaction, influencing surrounding molecules according to distance and concentration. 
+Single-channel solitons, including those in the original Lenia, would resemble simple microscopic lifeforms (e.g. bacteria, archaea, viruses), possess self-organization, self-replication, symmetry, individuality, motility, etc.</p>
+</blockquote>
+
+<p>Yet, to our knowledge, most of the “lifeforms” patterns that were discovered in Lenia were manually evolved from already stable SLP patterns (see <a href="https://chakazul.github.io/Lenia/JavaScript/Lenia.html">here</a>).
+Several key behaviors were missing in the original Lenia to push the comparisons further, such as <em>pattern-emission</em>. Interestingly, in less than 15000 training steps, 
+IMGEP-HOLMES could discover many “lifeform” solitons that seem to arise from a “soup” of fluid-like patterns capable of <em>pattern-emission</em>, when their existence remained an open question in 2D Lenia.
+Examples discoveries are shown in the below videos.</p>
+
+<div style="width: 100%; display: flex;  justify-content: space-between; align-items: center;">
+    <div style="width: 850px">
+        <div style="width: 850px; display: flex; justify-content: space-between; align-items: center;">
+            <video id="vid1" muted="" class="vidon" onclick="showVideo(this.id)" src="assets/media/video/run_0014852.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid2" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0011859.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid3" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0005133.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid4" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0008941.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid5" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0012507.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid6" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0011140.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid7" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0010764.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid8" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0010824.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid9" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0011471.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div style="width: 850px; display: flex;  justify-content: space-between;">
+            <video id="vid10" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0011174.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid11" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0011379.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid12" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0012372.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid13" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0012526.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid14" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0012361.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid15" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0014912.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid16" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0014394.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid17" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0014109.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid18" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0010085.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+
+        <div style="width: 850px; display: flex;  justify-content: space-between;">
+            <video id="vid19" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0013549.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid20" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0013666.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid22" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0013255.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid23" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0005041.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid24" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0014759.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid25" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0014844.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid26" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0010793.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid27" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0009444.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video id="vid28" muted="" class="vidoff" onclick="showVideo(this.id)" src="assets/media/video/run_0014953.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    <div style="width: 850px; ">
+        <span> <i class="fa fa-hand-pointer-o"></i>
+            Cick on an image (start pattern A<sup>t=1</sup>) to display the corresponding rollout video (A<sup>t=1</sup> &#8594; ... &#8594; A<sup>t=T</sup>).</span>
+    </div>
+    </div>
+
+    <div style="width: 300px; ">
+        <video controls="" muted="" autoplay="" loop="" style="width: 100%; border-style: solid; border-radius: 0px; border-width: 1px; opacity:1.0;" id="bigvid" src="assets/media/video/run_0014852.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <span id="descriptionvid"></span>
+    </div>
+</div>
+
+<style type="text/css">
+.vidoff {
+    opacity: 0.4;
+    width: 11%;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.vidon {
+    opacity: 1.0;
+    width: 11%;
+    border-style: solid;
+    border-width: 1px;
+}
+
+</style>
+
+<script type="text/javascript">
+    function showVideo(r){
+    var old_vid_on = document.getElementsByClassName('vidon')[0];
+    var new_vid_on = document.getElementById(r);
+    var big_video = document.getElementById("bigvid");
+    big_video.setAttribute("src", new_vid_on.getAttribute("src"));
+    old_vid_on.classList.add('vidoff');
+    old_vid_on.classList.remove('vidon');
+    new_vid_on.classList.add('vidon');
+    new_vid_on.classList.remove('vidoff');
+    new_vid_on.currentTime = 10;
+}
+
+
+</script>
+
+<p><br /><br /></p>
+
+<p>These results confirm the importance for <strong>meta-diversity</strong> search in the context of automated discovery in morphogenetic systems.
+Indeed, the more interesting behaviors emerged out of an unexpected niche of “wavy” patterns, isolated in the bottom-right part of IMGEP-HOLMES tree hierarchy, whereas we would rather expect such structures to evolve from the already-stable SLPs isolated in the left branch of the hierarchy.</p>
+
+<p><br /></p>
+
+<hr />
+
+<p><br /></p>
+
+<h3 id="complete-gallery-of-discoveries">Complete Gallery of Discoveries</h3>
+<p>Below, we provide an interface to browse through all the patterns discovered by the different IMGEP variants implemented in the main paper.
+We can qualitatively observe that the discoveries of an IMGEP relying on a monolithic architecture for the behavioral embedding design tends
+to bias the final discoveries (both for hand-defined and unsupervisedly-learned features), and that therefore the final discoveries are unlikely to be aligned with the interests of a final end-user.</p>
+
+<!--from here-->
+
+<div>
+    <form id="load_images">
+        Choose experiment 
+        <select id="experiment">
+        </select>
+        Repetition 
+        <select id="repetition">
+            <option value="0">0</option>
+        </select>
+        <button type="submit">Load Experiment</button>
+    </form>
+    <br />
+    Filter
+    <select id="classes">
+        <option value="All">All</option>
+    </select>
+
+</div>
+<div id="show_result">
+            
+</div>
+<div>
+    0
+    <input style="width: 90%;" type="range" id="window_slider" value="5000" step="48" max="5040" min="0" />
+    <span id="length_data">5000</span>
+</div>
+
+<!--to here-->
+
+<p><strong>Notice:</strong> Due to storage restrictions, we provide the full database of discoveries for only the first repetition (out of 10 repetitions per IMGEP variant).
+All the exploration experiments start by 1000 runs of Random Exploration, this is why all the patterns numeroted from 1 to 1000 are the same for a given seed (repetition number).</p>
+
+<p><br /></p>
+
+<hr />
+
+
+
+      </section>
+
+    </div>
+  </body>
+</html>
