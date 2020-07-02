@@ -6,10 +6,10 @@
         1425,
         16
       ],
-      "tensorPath": "https://mayalenetcheverry.com/assets/media/embeddings/IMGEP-HOLMES/BC 00000/tensors.tsv",
-      "metadataPath": "https://mayalenetcheverry.com/assets/media/embeddings/IMGEP-HOLMES/BC 00000/metadata.tsv",
+      "tensorPath": "https://mayalenetcheverry.com/holmes/assets/media/embeddings/IMGEP-HOLMES/BC 00000/tensors.tsv",
+      "metadataPath": "https://mayalenetcheverry.com/holmes/assets/media/embeddings/IMGEP-HOLMES/BC 00000/metadata.tsv",
       "sprite": {
-        "imagePath": "https://mayalenetcheverry.com/assets/media/embeddings/IMGEP-HOLMES/BC 00000/sprite.png",
+        "imagePath": "https://mayalenetcheverry.com/holmes/assets/media/embeddings/IMGEP-HOLMES/BC 00000/sprite.png",
         "singleImageDim": [
           64,
           64
