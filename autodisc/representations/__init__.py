@@ -1,2 +1,0 @@
-import autodisc.representations.static
-

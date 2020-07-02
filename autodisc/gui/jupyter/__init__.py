@@ -1,5 +1,0 @@
-import autodisc.gui.jupyter.misc
-from autodisc.gui.jupyter.plotly_meanstd_scatter import plotly_meanstd_scatter
-from autodisc.gui.jupyter.plotly_meanstd_scatter_polar import plotly_meanstd_scatter_polar
-from autodisc.gui.jupyter.plot_scatter_per_datasource import plot_scatter_per_datasource
-from autodisc.gui.jupyter.plot_holmes_partitioning import plot_holmes_partitioning
