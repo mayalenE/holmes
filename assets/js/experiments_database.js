@@ -17,7 +17,7 @@
             }
         })
         $(document).ready(function(){
-            $.getJSON( "assets/media/experiments/experiment_names.json", function( data ) {
+            $.getJSON( "http://mayalenE.github.io/assets/media/experiments/experiment_names.json", function( data ) {
                 var items = [];
                 $.each( data, function( key, val ) {
                     $("#experiment").append( "<option value='" + val + "'>" + val + "</option>" );
@@ -29,7 +29,7 @@
             $("#load_images").submit(function(){
                 displayImagesWithClassFromNumber(show_from, class_id_map["All"]);
 
-                $.getJSON("assets/media/experiments/"+ $("#experiment").val() +  "/repetition_" + pad( $("#repetition").val(),6) +"/classes.json", function( data ) {
+                $.getJSON("http://mayalenE.github.io/assets/media/experiments/"+ $("#experiment").val() +  "/repetition_" + pad( $("#repetition").val(),6) +"/classes.json", function( data ) {
                     $("#classes").html('<option value="All">All</option>');
                     $.each( data, function( key, val ) {
                         $("#classes").append( "<option value='" + key + "'>" + key + "</option>" );
@@ -73,7 +73,7 @@
             //show images
             for(i = 1; i <= 48; i++){
                 var image_number = image_map_for_class[index_in_map - (i)];
-                $("#img_"+(i-1)+" img").attr('src',"assets/media/experiments/"+ $("#experiment").val() +  "/repetition_" + pad( $("#repetition").val(),6) +"/images/" +  (image_number)  +".png");
+                $("#img_"+(i-1)+" img").attr('src',"http://mayalenE.github.io/assets/media/experiments/"+ $("#experiment").val() +  "/repetition_" + pad( $("#repetition").val(),6) +"/images/" +  (image_number)  +".png");
                 $("#img_"+(i-1)+" span").html( image_number + 1);
             }
         }
