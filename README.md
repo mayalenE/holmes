@@ -1,13 +1,13 @@
 # Hierarchically-Organized Latent Modules for Exploratory Search in Morphogenetic Systems
 
-[Project Website](https://mayalenetcheverry.com/holmes/)  
+[Project Website](https://mayalene.github.io/holmes/)  
 
 
 [Mayalen Etcheverry](https://mayalenetcheverry.com/), [Clément Moulin-Frier](http://clement-moulin-frier.github.io/), [Pierre-Yves Oudeyer](http://www.pyoudeyer.com/)  
 Flowers Team  
 Inria, Univ. Bordeaux, Ensta ParisTech (France)  
 
-This repository hosts the source code to reproduce the results presented in the paper [Hierarchically-Organized Latent Modules for Exploratory Search in Morphogenetic Systems]().
+This repository hosts the source code to reproduce the results presented in the paper [Hierarchically-Organized Latent Modules for Exploratory Search in Morphogenetic Systems](https://arxiv.org/abs/2007.01195).
 
 ### Step 0: Installation of the conda environment
 1. If you do not already have it, please install [Conda](https://www.anaconda.com/)
