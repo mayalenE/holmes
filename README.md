@@ -2,6 +2,8 @@
 
 [Project Website](https://mayalene.github.io/holmes/)  
 
+![](paper_illustration.png)
+
 
 [Mayalen Etcheverry](https://mayalenetcheverry.com/), [Clément Moulin-Frier](http://clement-moulin-frier.github.io/), [Pierre-Yves Oudeyer](http://www.pyoudeyer.com/)  
 Flowers Team  
