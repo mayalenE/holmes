@@ -1,4 +1,4 @@
-# Hierarchically-Organized Latent Modules for Exploratory Search in Morphogenetic Systems
+# Hierarchically Organized Latent Modules for Exploratory Search in Morphogenetic Systems
 
 [Project Website](https://mayalene.github.io/holmes/)  
 
