@@ -7,7 +7,7 @@
 Flowers Team  
 Inria, Univ. Bordeaux, Ensta ParisTech (France)  
 
-This repository hosts the source code to reproduce the results presented in the paper [Hierarchically-Organized Latent Modules for Exploratory Search in Morphogenetic Systems](https://arxiv.org/abs/2007.01195).
+This repository hosts the source code to reproduce the results presented in the paper [Hierarchically Organized Latent Modules for Exploratory Search in Morphogenetic Systems](https://arxiv.org/abs/2007.01195).
 
 ### Step 0: Installation of the conda environment
 1. If you do not already have it, please install [Conda](https://www.anaconda.com/)
