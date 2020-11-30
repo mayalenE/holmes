@@ -8,6 +8,7 @@ from goalrepresent.datasets.image.imagedataset import MIXEDDataset
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+from sklearn import cluster
 import sys
 import time
 import torch

@@ -14,20 +14,14 @@ This repository hosts the source code to reproduce the results presented in the 
 ### Step 0: Installation of the conda environment
 1. If you do not already have it, please install [Conda](https://www.anaconda.com/)
 2. Create *holmes* conda environment: `conda create --name holmes python=3.6`
-3. Install the required conda packages in the environment: `conda env update --name holmes --file holmes_requirements.yml`
-3. Install the required pip packages in the environment (including the provided packages *autodisc* and *goalrepresent*):
-```sh
-	conda activate holmes
-	pip install neat-python==0.92
-	pip install -e .
-```
-
+3. Activate *holmes* conda environment: `conda activate holmes`
+4. Install the required conda packages in the environment (one by one to deal with dependencies errors): `while read requirement; do conda install --yes $requirement --channel default --channel anaconda --channel conda-forge --channel pytorch; done < requirements.txt`
+5. Install the required pip packages in the environment (including the provided packages *exputils*, *autodisc* and *goalrepresent*): `pip install -e .`
 
 ### Step 1: Reproduce paper results
 To reproduce a figure from the paper, please do the following:
 ```sh
 	cd reproduce_paper_figures
-	conda activate holmes
 	jupyter notebook
 ```
 
@@ -108,4 +102,4 @@ If you wand to regenerate those results, two steps are needed:
 **Notice:** Please note that each individual training experiments needs a long time to train (between 20 and 35 hours with one GPU), we therefore recommand to run them if possible on a cluster and in parallel. For this purpose, each python script `<script_name>.py` is accompanied by a `run_<script_name>.slurm` to run the code on a cluster using the [SLURM](https://slurm.schedmd.com/overview.html) job manager.
 
 ## Acknowledgement
-The *autodisc* package used in our code builds upon flowersteam's [autodisc](https://github.com/flowersteam/automated_discovery_of_lenia_patterns) package developped by [Chris Reinke](https://www.scirei.net/). 
+The *exputils* and *autodisc* packages used in our code builds upon [flowersteam's packages](https://github.com/flowersteam/automated_discovery_of_lenia_patterns) developped by [Chris Reinke](https://www.scirei.net/). 
